@@ -1,1 +1,920 @@
-hello world
+<html lang="en">
+<head>
+   
+   <title>Gmail Style Inbox page  - coderglass</title>
+   <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <link href="css/tab.css" rel="stylesheet" id="bootstrap-css">
+    
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height()); 
+          window.parent.postMessage( iframe_height, 'https://coderglass.com');
+        });
+    </script>
+	<script type="text/javascript">
+function SwapDivsWithClick(div1,div2)
+{
+   d1 = document.getElementById(div1);
+   d2 = document.getElementById(div2);
+   if( d2.style.display == "none" )
+   {
+      d1.style.display = "none";
+      d2.style.display = "block";
+   }
+   else
+   {
+      d1.style.display = "block";
+      d2.style.display = "none";
+   }
+}
+</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script id="gs-sdk" src='//www.buildquickbots.com/botwidget/v3/demo/static/js/sdk.js?v=3' key="a182f130-a7c5-4b2d-84f8-6e3461e1defc" ></script>
+</head>
+<body>
+
+	<div class="container">
+    <div class="row">
+        <div class="col-sm-3 col-md-3">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    MAIL 
+                </button>
+                <!--<ul class="dropdown-menu" role="menu">
+                    <li ><a  style='color:red;' href="#">Mail</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Tasks</a></li>
+                </ul>-->
+            </div>
+        </div>
+       <div class="col-sm-9 col-md-9">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">
+                    <div class="checkbox" style="margin: 0;">
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </div>
+                </button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">All</a></li>
+                    <li><a href="#">None</a></li>
+                    <li><a href="#">Read</a></li>
+                    <li><a href="#">Unread</a></li>
+                    <li><a href="#">Starred</a></li>
+                    <li><a href="#">Unstarred</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh">
+                &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;&nbsp;</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    More <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Mark all as read</a></li>
+                    <li class="divider"></li>
+                    <li class="text-center">
+					<small class="text-muted">Select messages to see more actions</small>
+					</li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <span class="text-muted"><b>1</b>–<b>50</b> of <b>277</b></span>
+                <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+	<div class="row">
+        <div class="col-sm-9 col-lg-3">
+            <a href="#" class="btn btn-danger btn-sm btn-block" role="button">COMPOSE</a>
+            <hr />
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"><span class="badge pull-right">1546</span> Inbox </a>
+                </li>
+                <li><a style='color:black;' href="#">Starred</a></li>
+                <li><a style='color:black;' href="#">Important</a></li>
+                <li><a style='color:black;' href="#">Sent Mail</a></li>
+                <li><a style='color:black;' href="#">
+				<span class="badge pull-right">445</span>Drafts</a></li>
+            </ul>
+			<br>
+			<br>
+			<!--<div class="" style=""><iframe src="https://fxo.io/m/nrjyvrk9" style="border: 3px solid #f9f9fb; width: 100%; height: 50%;"></iframe>
+			</div>-->
+			<!--<div>
+			<hr>
+			    NAME
+			<hr>
+			   <a href="#" class="list-group-item" ><div>
+			    Person1
+			   </div></a>
+			   <div>
+			    Person2
+			   </div>
+			</div>-->
+        </div>
+	 <div id="c2" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c2')" class="list-group-item">
+					<h3 style="font-weight:bold">Your lockers are full</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>SWISS:bank</b>&ltsnb@snb.ch&gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Dear Customer,<br>
+                      We have seen unprecedented money deposit from you in the past 4 years. Though we congratulate you for your success, we regret to <br> inform that your lockers are full and we can't accommodate any more of your cash and gold.</p> 					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to &ltsnb@snb.ch&gt </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  I was the brain behind SWISS bank. How can you say no to me. This is my last year. I have more loads of money coming. 
+					  </div>
+					  <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>SWISS:bank</b>&ltsnb@snb.ch&gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Dear Customer,<br>
+                      <p>I am not from Andhra to believe your stories.</p> 					  
+					</div>
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+		
+		<div id="c3" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c3')" class="list-group-item">
+					<h3 style="font-weight:bold">Don't take credit of our work.</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>NAUKRI</b>&ltusa@naukri.com&gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Please stop claiming our results in getting jobs as yours. We provided more jobs to youth in the past 14 days than what you got in past 14 years. 					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to NAUKRI </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Satya Nadella got a job because of me.
+					  </div>
+					  <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>NAUKRI</b>&ltusa@naukri.com&gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  #facepalm Deleting your account. 					  
+					</div>
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+					  
+					  <div id="c4" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c4')" class="list-group-item">
+					<h3 style="font-weight:bold">Email update with swiss bank.</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Jokesh</b>&lt jokesh@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  I have updated swiss bank account with your official email to prevent hacking. 					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to Jokesh </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Oh my GOD. Tere se nahi hopayega beta.There is a history of back stabbing father-in-law but not father.
+					  </div>
+					  <!--<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>NAUKRI</b>&ltusa@naukri.com&gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  #facepalm Deleting your account. 					  
+					</div>-->
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+					  
+					  <div id="c5" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c5')" class="list-group-item">
+					<h3 style="font-weight:bold">Where is my job?</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Unemployed Youth</b>&lt unemployedyouth@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  When are we getting our jobs?? we were cheated by 'Job kavali ante babu ravali'.					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to Unemployed Youth </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 Brothers,<br>
+					  After i come to power in 2019, I will create a special budget for jobs.
+					  </div>
+					  <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Unemployed Youth</b>&lt unemployedyouth@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Don't worry Sir, we realized that 'job kavali ante babu povali'				  
+					</div>
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+					  
+					  <div id="c6" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c6')" class="list-group-item">
+					<h3 style="font-weight:bold">Capital city is done.</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Moli</b>&lt moli@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 Bijjala Deva,<br>
+					  I finished creating a graphic video of capital city. It cost 50 lakhs. This is better than Mahishmathi.					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to Moli </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 O.K. you successfully finished construction of capital. Now i can tell people capital is done.
+					  </div>
+					  <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Moli</b>&lt moli@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Enni puranalu vethikina ninnu kotte character e ledu.			  
+					</div>
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+		
+		<div id="c7" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c7')" class="list-group-item">
+					<h3 style="font-weight:bold">New lot of leaders up for sale</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>CM Ramesh</b>&lt CMRamesh@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 Sir,<br>
+					  We are losing some people whom we already bought. I found 5 more people whom we can buy.					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to CM Ramesh </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 Thanks for briefing me. Go ahead.
+					  </div>
+					  <!--<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Moli</b>&lt moli@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Enni puranalu vethikina ninnu kotte character e ledu.			  
+					</div>-->
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+					  
+					  <div id="c8" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c8')" class="list-group-item">
+					<h3 style="font-weight:bold">Kapu reservation?</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Mudaragadda</b>&lt Mudaragadda@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					How long will you cheat my people? when is the notification date?.				  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to Mudaragadda </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 My cabinet approved it. But there is a supreme court ruling which is stopping it.
+					  </div>
+					 <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Mudaragadda</b>&lt Mudaragadda@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Didn't you know about the 50% reservation limit before making the promise?<br>
+we will start the agitation.					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to Mudaragadda </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 House arrest.
+					  </div>
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+					  
+					  <div id="c9" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c9')" class="list-group-item">
+					<h3 style="font-weight:bold">BalaKrishna gave a speech.</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Google Alerts</b>&lt googlealert@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 Today at 10am BalaKrishna gave a speech about special status. It is going viral.					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to Google Alerts </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 I hope he did not slap anyone in the video.					  </div>
+					  <!--<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Moli</b>&lt moli@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Enni puranalu vethikina ninnu kotte character e ledu.			  
+					</div>-->
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+		
+		<div id="c10" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c10')" class="list-group-item">
+					<h3 style="font-weight:bold">Why this kolaveri?.</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					What happened to all the funds I gave you?.					  
+					</div>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to PMModi </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 What i am saying is.........					  </div>
+					  <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Meeru mosagalleke mosagadu.
+					</div>
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+					  
+					  <div id="c11" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c11')" class="list-group-item">
+					<h3 style="font-weight:bold">Where is our land?.</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Amaravathi Farmers</b>&lt amaravathifarmers@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					All of us are jobless after you took away our land. We will make sure seat is taken away.					  
+					</div>
+					<!--<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to PMModi </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 What i am saying is.........					  </div>
+					  <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Meeru mosagalleke mosagadu.
+					</div>-->
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+					  
+					  <div id="c12" style="display:none;">
+	  <div class="col-sm-9 col-md-9">
+	  <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div>
+					 <a href="javascript:SwapDivsWithClick('c1','c12')" class="list-group-item">
+					<h3 style="font-weight:bold">When is the next recharge?.</h3>
+					<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>PK</b>&lt pk@gmail.com &gt </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+						when is the next recharge?. It is costing a lot to hide the facts that the committee found out.				  
+					</div>
+					<!--<hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>Me</b></div>
+                       <div>to PMModi </div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					 What i am saying is.........					  </div>
+					  <hr>
+					<div style="display:inline-block;vertical-align:top;">
+					<img src="images/dum1.png" alt="img" width="42" height="42">
+					</div>
+					 <div style="display:inline-block;">
+					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt  </div>
+                       <div>to me</div>  
+					</div>
+					<div style="margin-left:44px;">
+					<br>
+					  Meeru mosagalleke mosagadu.
+					</div>-->
+					  </div></a>
+					  </div>
+					</div>
+					  </div>
+					  </div>
+		
+       <div class="holder" id ="c1" style="display:block;right:50%"> 
+		<div class="col-sm-9 col-md-9">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">
+				<span class="glyphicon glyphicon-inbox">
+                </span>Primary</a></li>
+                <li><a style="color:black;" href="#profile" data-toggle="tab">
+				<span class="glyphicon glyphicon-user">
+				</span>Social</a></li>
+                <li><a style="color:black;" href="#messages" data-toggle="tab">
+				<span class="glyphicon glyphicon-tags">
+				</span>Promotions</a></li>
+                <li><a style="color:black;" href="#settings" data-toggle="tab">
+				<span class="glyphicon glyphicon-plus no-margin">
+                </span></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div class="list-group">
+                        
+                    <a href="javascript:SwapDivsWithClick('c1','c2')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">SWISS bank,me(3)</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Your lockers are full</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -Dear Customer,We have seen unprecedented money deposit from you in the past
+					</span> 
+					<!--<span class="badge">12:10 AM</span>-->
+					<!--<span class="pull-right">-->
+					<!--<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+                    
+					<a href="javascript:SwapDivsWithClick('c1','c3')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">NAUKRI,me</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Don't take credit of our work.</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -Please stop claiming our results in getting jobs as yours. We provided more
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+					
+					<a href="javascript:SwapDivsWithClick('c1','c4')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">Jokesh,me</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Email update with swiss bank.</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -I have updated swiss bank account with your official email to prevent 
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+					
+					<a href="javascript:SwapDivsWithClick('c1','c6')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">Moli,me,Moli</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Capital city is done.</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 - Bijjala Deva,
+					  I finished creating a graphic video of capital city. It cost 50 lakhs. This is
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+                     
+					 <a href="javascript:SwapDivsWithClick('c1','c5')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">Unemployed Youth,me(3)</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Where is my job?</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -When are we getting our jobs?? we were cheated by 'Job kavali ante babu ravali'
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+					
+					<a href="javascript:SwapDivsWithClick('c1','c7')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">CM Ramesh,me</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp New lot of leaders up for sale</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -Sir,
+					  We are losing some people whom we already bought
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+					
+					<a href="javascript:SwapDivsWithClick('c1','c8')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">Mudaragadda,me(4)</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Kapu reservation?</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -How long will you cheat my people? when is the notification date?
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+					
+					<a href="javascript:SwapDivsWithClick('c1','c9')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">Google alert,me</span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp BalaKrishna gave a speech.</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -Today at 10am BalaKrishna gave a speech about special 
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+                        
+					<a href="javascript:SwapDivsWithClick('c1','c10')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">Modi,me,Modi </span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Why this kolaveri?</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -what happened to all the funds.
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+					
+					<!--<a href="javascript:SwapDivsWithClick('c1','c11')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">Amaravathi Farmers,me </span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp Where is our land?</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -All of us are jobless after you took away our land. We will make sure seat
+					</span> 
+					<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">
+                    </span></span>
+					</a>-->
+					
+					<a href="javascript:SwapDivsWithClick('c1','c12')" class="list-group-item">
+                    <div class="checkbox">
+                       <label>
+                        <input type="checkbox">
+                       </label>
+                    </div>
+                    <span class="glyphicon glyphicon-star"></span>
+					<span class="name" style="min-width: 130px; display: inline-block;">PK </span>
+					<span class="">&nbsp &nbsp &nbsp &nbsp When is the next recharge?</span>
+                    <span class="text-muted" style="font-size: 12px;">
+					 -when is the next recharge?. It is costing a lot to hide the facts that the committee found out.
+					</span> 
+					<!--<span class="badge">12:10 AM</span> 
+					<span class="pull-right">
+					<span class="glyphicon glyphicon-paperclip">-->
+                    </span></span>
+					</a>
+					
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+		</div>
+	 </div>
+	 </div>
+</body>
+</html>
