@@ -1,919 +1,548 @@
-<html lang="en">
-<head>
-   <title>Gmail Style Inbox page  - coderglass</title>
-   <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   <link href="css/tab.css" rel="stylesheet" id="bootstrap-css">
-    
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        window.alert = function(){};
-        var defaultCSS = document.getElementById('bootstrap-css');
-        function changeCSS(css){
-            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
-            else $('head > link').filter(':first').replaceWith(defaultCSS); 
-        }
-        $( document ).ready(function() {
-          var iframe_height = parseInt($('html').height()); 
-          window.parent.postMessage( iframe_height, 'https://coderglass.com');
-        });
-    </script>
-	<script type="text/javascript">
-function SwapDivsWithClick(div1,div2)
-{
-   d1 = document.getElementById(div1);
-   d2 = document.getElementById(div2);
-   if( d2.style.display == "none" )
-   {
-      d1.style.display = "none";
-      d2.style.display = "block";
-   }
-   else
-   {
-      d1.style.display = "block";
-      d2.style.display = "none";
-   }
-}
-</script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<script id="gs-sdk" src='//www.buildquickbots.com/botwidget/v3/demo/static/js/sdk.js?v=3' key="a182f130-a7c5-4b2d-84f8-6e3461e1defc" ></script>
-</head>
-<body>
+<!DOCTYPE html>
+<!-- ==============================
+    Project:        Metronic "Aircv" Frontend Freebie - Responsive HTML Template Based On Twitter Bootstrap 3.3.4
+    Version:        1.0
+    Author:         KeenThemes
+    Primary use:    Corporate, Business Themes.
+    Email:          support@keenthemes.com
+    Follow:         http://www.twitter.com/keenthemes
+    Like:           http://www.facebook.com/keenthemes
+    Website:        http://www.keenthemes.com
+    Premium:        Premium Metronic Admin Theme: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+================================== -->
+<html lang="en" class="no-js">
+    <!-- BEGIN HEAD -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>My Portfolio</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
 
-	<div class="container">
-    <div class="row">
-        <div class="col-sm-3 col-md-3">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    MAIL 
-                </button>
-                <!--<ul class="dropdown-menu" role="menu">
-                    <li ><a  style='color:red;' href="#">Mail</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Tasks</a></li>
-                </ul>-->
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="css/animate.css" rel="stylesheet">
+
+        <!-- THEME STYLES -->
+        <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <!-- END HEAD -->
+
+    <!-- BODY -->
+    <body id="body" data-spy="scroll" data-target=".header">
+
+        <!--========== HEADER ==========-->
+        <header class="header navbar-fixed-top">
+            <!-- Navbar -->
+            <nav class="navbar" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container js_nav-item">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
+
+                        <!-- Logo 
+                        <div class="logo">
+                            <a class="logo-wrap" href="#body">
+                                <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+                                <img class="logo-img logo-img-active" src="img/logo-dark.png" alt="Asentus Logo">
+                            </a>
+                        </div>
+                        End Logo -->
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-collapse">
+                        <div class="menu-container">
+                            <ul class="nav navbar-nav navbar-nav-right">
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#body">Home</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#about">About</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#experience">Experience</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#work">Work</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Navbar Collapse -->
+                </div>
+            </nav>
+            <!-- Navbar -->
+        </header>
+        <!--========== END HEADER ==========-->
+
+        <!--========== SLIDER ==========-->
+        <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="img/bgd.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="promo-block-divider">
+                            <h1 class="promo-block-title">Ramu <br/> Narsinga</h1>
+                            <p class="promo-block-text">Web Developer &amp; Surrealist</p>
+                        </div>
+                        <ul class="list-inline">
+                            <li><a href="https://twitter.com/keenthemes" class="social-icons"><i class="icon-social-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/keenthemes" class="social-icons"><i class="icon-social-twitter"></i></a></li>
+                            <li><a href="https://dribbble.com/keenthemes" class="social-icons"><i class="icon-social-dribbble"></i></a></li>
+                            <li><a href="https://www.behance.net/keenthemes" class="social-icons"><i class="icon-social-behance"></i></a></li>
+                            <li><a href="https://www.behance.net/keenthemes" class="social-icons"><i class="icon-social-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--// end row -->
             </div>
         </div>
-       <div class="col-sm-9 col-md-9">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default">
-                    <div class="checkbox" style="margin: 0;">
-                        <label>
-                            <input type="checkbox">
-                        </label>
+        <!--========== SLIDER ==========-->
+
+        <!--========== PAGE LAYOUT ==========-->
+        <!-- About -->
+        <div id="about">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Intro</h2>
+                            <p>What I am all about.</p>
+                        </div>
                     </div>
-                </button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">All</a></li>
-                    <li><a href="#">None</a></li>
-                    <li><a href="#">Read</a></li>
-                    <li><a href="#">Unread</a></li>
-                    <li><a href="#">Starred</a></li>
-                    <li><a href="#">Unstarred</a></li>
-                </ul>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <div class="margin-b-60">
+                            <p>I'm Ramu Narsinga</p>
+                            <p>Hobbyist<br>
+							   Philosopher<br>
+							   In love with programming.<br>
+							   I don't necessarily have to know everything about programming, programming is best understood with examples, using which I can improvise with good analytical and researching skills to develop things, been doing it. </p>
+                        </div>
+
+                        <!-- Progress Box -->
+                        <div class="progress-box">
+						    <p>stats look poor, i know, i just started working on my portfolio, but hey I'm gonna work on them.
+                            <h5>PHP <span class="color-heading pull-right">17%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="17"></div>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <h5>HTML5 <span class="color-heading pull-right">40%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="40"></div>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <h5>JavaSript <span class="color-heading pull-right">30%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="30"></div>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <h5>C <span class="color-heading pull-right">50%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="50"></div>
+                            </div>
+                        </div>
+						<div class="progress-box">
+                            <h5>C++ <span class="color-heading pull-right">30%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="30"></div>
+                            </div>
+                        </div>
+						<div class="progress-box">
+                            <h5>Python<span class="color-heading pull-right">30%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="30"></div>
+                            </div>
+                        </div>
+						<div class="progress-box">
+                            <h5>C <span class="color-heading pull-right">50%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="50"></div>
+                            </div>
+                        </div>
+						<div class="progress-box">
+                            <h5>Bootstrap <span class="color-heading pull-right">10%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="10"></div>
+                            </div>
+                        </div>
+						<div class="progress-box">
+                            <h5>Full Stack MEAN <span class="color-heading pull-right">10%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="10"></div>
+                            </div>
+                        </div>
+                        <!-- End Progress Box -->
+                    </div>
+                </div>
+                <!--// end row -->
             </div>
-            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh">
-                &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;&nbsp;</button>
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    More <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Mark all as read</a></li>
-                    <li class="divider"></li>
-                    <li class="text-center">
-					<small class="text-muted">Select messages to see more actions</small>
-					</li>
-                </ul>
-            </div>
-            <div class="pull-right">
-                <span class="text-muted"><b>1</b>–<b>50</b> of <b>277</b></span>
-                <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </button>
+        </div>
+        <!-- End About -->
+
+        <!-- Experience -->
+        <div id="experience">
+            <div class="bg-color-sky-light" data-auto-height="true">
+                <div class="container content-lg">
+                    <div class="row">
+                        <div class="col-sm-3 sm-margin-b-30">
+                            <div class="text-right sm-text-left">
+                                <h2 class="margin-b-0">Experience</h2>
+                                <p>should be around soon.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <div class="row row-space-2 margin-b-4">
+                                <div class="col-md-4 md-margin-b-4">
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon icon-chemistry"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>HTML5/CSS3</h3>
+                                            <!--<p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>-->
+                                        </div>
+                                        <a href="#" class="content-wrapper-link"></a>    
+                                    </div>
+                                </div>
+                                <div class="col-md-4 md-margin-b-4">
+                                    <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                                        <div class="service-element">
+                                            <i class="service-icon color-white icon-screen-tablet"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3 class="color-white">Coding</h3>
+                                            <!--<p class="color-white margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>-->
+                                        </div>
+                                        <a href="#" class="content-wrapper-link"></a>    
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon icon-badge"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>Front-end</h3>
+                                            <!--<p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>-->
+                                        </div>
+                                        <a href="#" class="content-wrapper-link"></a>    
+                                    </div>
+                                </div>
+                            </div>
+                            <!--// end row -->
+                        </div>
+                    </div>
+                    <!--// end row -->
                 </div>
             </div>
         </div>
-    </div>
-    <hr />
-	<div class="row">
-        <div class="col-sm-9 col-md-2">
-            <a href="#" class="btn btn-danger btn-sm btn-block" role="button">COMPOSE</a>
-            <hr />
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right">1546</span> Inbox </a>
-                </li>
-                <li><a style='color:black;' href="#">Starred</a></li>
-                <li><a style='color:black;' href="#">Important</a></li>
-                <li><a style='color:black;' href="#">Sent Mail</a></li>
-                <li><a style='color:black;' href="#">
-				<span class="badge pull-right">445</span>Drafts</a></li>
-            </ul>
-			<br>
-			<br>
-			<!--<div class="" style=""><iframe src="https://fxo.io/m/nrjyvrk9" style="border: 3px solid #f9f9fb; width: 100%; height: 50%;"></iframe>
-			</div>-->
-			<!--<div>
-			<hr>
-			    NAME
-			<hr>
-			   <a href="#" class="list-group-item" ><div>
-			    Person1
-			   </div></a>
-			   <div>
-			    Person2
-			   </div>
-			</div>-->
-        </div>
-	 <div id="c2" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c2')" class="list-group-item">
-					<h3 style="font-weight:bold">Your lockers are full</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>SWISS:bank</b>&ltsnb@snb.ch&gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Dear Customer,<br>
-                      We have seen unprecedented money deposit from you in the past 4 years. Though we congratulate you for your success, we regret to <br> inform that your lockers are full and we can't accommodate any more of your cash and gold.</p> 					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to &ltsnb@snb.ch&gt </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  I was the brain behind SWISS bank. How can you say no to me. This is my last year. I have more loads of money coming. 
-					  </div>
-					  <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>SWISS:bank</b>&ltsnb@snb.ch&gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Dear Customer,<br>
-                      <p>I am not from Andhra to believe your stories.</p> 					  
-					</div>
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-		
-		<div id="c3" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c3')" class="list-group-item">
-					<h3 style="font-weight:bold">Don't take credit of our work.</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>NAUKRI</b>&ltusa@naukri.com&gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Please stop claiming our results in getting jobs as yours. We provided more jobs to youth in the past 14 days than what you got in past 14 years. 					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to NAUKRI </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Satya Nadella got a job because of me.
-					  </div>
-					  <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>NAUKRI</b>&ltusa@naukri.com&gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  #facepalm Deleting your account. 					  
-					</div>
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-					  
-					  <div id="c4" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c4')" class="list-group-item">
-					<h3 style="font-weight:bold">Email update with swiss bank.</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Jokesh</b>&lt jokesh@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  I have updated swiss bank account with your official email to prevent hacking. 					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to Jokesh </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Oh my GOD. Tere se nahi hopayega beta.There is a history of back stabbing father-in-law but not father.
-					  </div>
-					  <!--<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>NAUKRI</b>&ltusa@naukri.com&gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  #facepalm Deleting your account. 					  
-					</div>-->
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-					  
-					  <div id="c5" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c5')" class="list-group-item">
-					<h3 style="font-weight:bold">Where is my job?</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Unemployed Youth</b>&lt unemployedyouth@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  When are we getting our jobs?? we were cheated by 'Job kavali ante babu ravali'.					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to Unemployed Youth </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 Brothers,<br>
-					  After i come to power in 2019, I will create a special budget for jobs.
-					  </div>
-					  <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Unemployed Youth</b>&lt unemployedyouth@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Don't worry Sir, we realized that 'job kavali ante babu povali'				  
-					</div>
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-					  
-					  <div id="c6" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c6')" class="list-group-item">
-					<h3 style="font-weight:bold">Capital city is done.</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Moli</b>&lt moli@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 Bijjala Deva,<br>
-					  I finished creating a graphic video of capital city. It cost 50 lakhs. This is better than Mahishmathi.					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to Moli </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 O.K. you successfully finished construction of capital. Now i can tell people capital is done.
-					  </div>
-					  <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Moli</b>&lt moli@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Enni puranalu vethikina ninnu kotte character e ledu.			  
-					</div>
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-		
-		<div id="c7" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c7')" class="list-group-item">
-					<h3 style="font-weight:bold">New lot of leaders up for sale</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>CM Ramesh</b>&lt CMRamesh@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 Sir,<br>
-					  We are losing some people whom we already bought. I found 5 more people whom we can buy.					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to CM Ramesh </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 Thanks for briefing me. Go ahead.
-					  </div>
-					  <!--<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Moli</b>&lt moli@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Enni puranalu vethikina ninnu kotte character e ledu.			  
-					</div>-->
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-					  
-					  <div id="c8" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c8')" class="list-group-item">
-					<h3 style="font-weight:bold">Kapu reservation?</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Mudaragadda</b>&lt Mudaragadda@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					How long will you cheat my people? when is the notification date?.				  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to Mudaragadda </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 My cabinet approved it. But there is a supreme court ruling which is stopping it.
-					  </div>
-					 <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Mudaragadda</b>&lt Mudaragadda@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Didn't you know about the 50% reservation limit before making the promise?<br>
-we will start the agitation.					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to Mudaragadda </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 House arrest.
-					  </div>
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-					  
-					  <div id="c9" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c9')" class="list-group-item">
-					<h3 style="font-weight:bold">BalaKrishna gave a speech.</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Google Alerts</b>&lt googlealert@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 Today at 10am BalaKrishna gave a speech about special status. It is going viral.					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to Google Alerts </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 I hope he did not slap anyone in the video.					  </div>
-					  <!--<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Moli</b>&lt moli@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Enni puranalu vethikina ninnu kotte character e ledu.			  
-					</div>-->
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-		
-		<div id="c10" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c10')" class="list-group-item">
-					<h3 style="font-weight:bold">Why this kolaveri?.</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					What happened to all the funds I gave you?.					  
-					</div>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to PMModi </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 What i am saying is.........					  </div>
-					  <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Meeru mosagalleke mosagadu.
-					</div>
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-					  
-					  <div id="c11" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c11')" class="list-group-item">
-					<h3 style="font-weight:bold">Where is our land?.</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Amaravathi Farmers</b>&lt amaravathifarmers@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					All of us are jobless after you took away our land. We will make sure seat is taken away.					  
-					</div>
-					<!--<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to PMModi </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 What i am saying is.........					  </div>
-					  <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Meeru mosagalleke mosagadu.
-					</div>-->
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-					  
-					  <div id="c12" style="display:none;">
-	  <div class="col-sm-9 col-md-10">
-	  <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div>
-					 <a href="javascript:SwapDivsWithClick('c1','c12')" class="list-group-item">
-					<h3 style="font-weight:bold">When is the next recharge?.</h3>
-					<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>PK</b>&lt pk@gmail.com &gt </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-						when is the next recharge?. It is costing a lot to hide the facts that the committee found out.				  
-					</div>
-					<!--<hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>Me</b></div>
-                       <div>to PMModi </div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					 What i am saying is.........					  </div>
-					  <hr>
-					<div style="display:inline-block;vertical-align:top;">
-					<img src="images/dum1.png" alt="img" width="42" height="42">
-					</div>
-					 <div style="display:inline-block;">
-					  <div><b>PM Modi</b>&lt PMModi@gmail.com &gt  </div>
-                       <div>to me</div>  
-					</div>
-					<div style="margin-left:44px;">
-					<br>
-					  Meeru mosagalleke mosagadu.
-					</div>-->
-					  </div></a>
-					  </div>
-					</div>
-					  </div>
-					  </div>
-		
-       <div class="holder" id ="c1" style="display:block;right:20%"> 
-		<div class="col-sm-9 col-md-10">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#home" data-toggle="tab">
-				<span class="glyphicon glyphicon-inbox">
-                </span>Primary</a></li>
-                <li><a style="color:black;" href="#profile" data-toggle="tab">
-				<span class="glyphicon glyphicon-user">
-				</span>Social</a></li>
-                <li><a style="color:black;" href="#messages" data-toggle="tab">
-				<span class="glyphicon glyphicon-tags">
-				</span>Promotions</a></li>
-                <li><a style="color:black;" href="#settings" data-toggle="tab">
-				<span class="glyphicon glyphicon-plus no-margin">
-                </span></a></li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div class="tab-pane fade in active" id="home">
-                    <div class="list-group">
-                        
-                    <a href="javascript:SwapDivsWithClick('c1','c2')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
+        <!-- End Experience -->
+
+        <!-- Work -->
+        <div id="work">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Works</h2>
+                            <p>Working on showcasing my projects,should be around soon.</p>
+                        </div>
                     </div>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">SWISS bank,me(3)</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Your lockers are full</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -Dear Customer,We have seen unprecedented money deposit from you in the past
-					</span> 
-					<!--<span class="badge">12:10 AM</span>-->
-					<!--<span class="pull-right">-->
-					<!--<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-                    
-					<a href="javascript:SwapDivsWithClick('c1','c3')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">NAUKRI,me</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Don't take credit of our work.</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -Please stop claiming our results in getting jobs as yours. We provided more
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-					
-					<a href="javascript:SwapDivsWithClick('c1','c4')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">Jokesh,me</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Email update with swiss bank.</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -I have updated swiss bank account with your official email to prevent 
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-					
-					<a href="javascript:SwapDivsWithClick('c1','c6')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">Moli,me,Moli</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Capital city is done.</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 - Bijjala Deva,
-					  I finished creating a graphic video of capital city. It cost 50 lakhs. This is
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-                     
-					 <a href="javascript:SwapDivsWithClick('c1','c5')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">Unemployed Youth,me(3)</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Where is my job?</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -When are we getting our jobs?? we were cheated by 'Job kavali ante babu ravali'
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-					
-					<a href="javascript:SwapDivsWithClick('c1','c7')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">CM Ramesh,me</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp New lot of leaders up for sale</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -Sir,
-					  We are losing some people whom we already bought
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-					
-					<a href="javascript:SwapDivsWithClick('c1','c8')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">Mudaragadda,me(4)</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Kapu reservation?</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -How long will you cheat my people? when is the notification date?
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-					
-					<a href="javascript:SwapDivsWithClick('c1','c9')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">Google alert,me</span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp BalaKrishna gave a speech.</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -Today at 10am BalaKrishna gave a speech about special 
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-                        
-					<a href="javascript:SwapDivsWithClick('c1','c10')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">Modi,me,Modi </span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Why this kolaveri?</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -what happened to all the funds.
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-					
-					<!--<a href="javascript:SwapDivsWithClick('c1','c11')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">Amaravathi Farmers,me </span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp Where is our land?</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -All of us are jobless after you took away our land. We will make sure seat
-					</span> 
-					<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">
-                    </span></span>
-					</a>-->
-					
-					<a href="javascript:SwapDivsWithClick('c1','c12')" class="list-group-item">
-                    <div class="checkbox">
-                       <label>
-                        <input type="checkbox">
-                       </label>
-                    </div>
-                    <span class="glyphicon glyphicon-star"></span>
-					<span class="name" style="min-width: 130px; display: inline-block;">PK </span>
-					<span class="">&nbsp &nbsp &nbsp &nbsp When is the next recharge?</span>
-                    <span class="text-muted" style="font-size: 14px;">
-					 -when is the next recharge?. It is costing a lot to hide the facts that the committee found out.
-					</span> 
-					<!--<span class="badge">12:10 AM</span> 
-					<span class="pull-right">
-					<span class="glyphicon glyphicon-paperclip">-->
-                    </span></span>
-					</a>
-					
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <!-- Masonry Grid -->
+						Updating soon.
+                        <!--<div class="masonry-grid row row-space-2">
+                            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
+                                Work 
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive" src="img/800x400/01.jpg" alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Art Of Coding</h3>
+                                                <span>Clean &amp; Minimalistic Design</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Design,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Coding,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Portfolio</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                End Work 
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                Work 
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive" src="img/397x400/01.jpg" alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Art Of Coding</h3>
+                                                <span>Clean &amp; Minimalistic Design</span>
+                                            </div>
+                                           <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Design,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Coding,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Portfolio</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 End Work 
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
+                                 Work 
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive" src="img/397x300/01.jpg" alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Art Of Coding</h3>
+                                                <span>Clean &amp; Minimalistic Design</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Design,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Coding,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Portfolio</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 End Work 
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
+                                 Work 
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive" src="img/397x300/02.jpg" alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Art Of Coding</h3>
+                                                <span>Clean &amp; Minimalistic Design</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Design,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Coding,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Portfolio</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 End Work
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                                Work
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive" src="img/397x300/03.jpg" alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Art Of Coding</h3>
+                                                <span>Clean &amp; Minimalistic Design</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Design,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Coding,</a></li>
+                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="http://keenthemes.com/">Portfolio</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 End Work 
+                            </div>
+                        </div>-->
                     </div>
                 </div>
-                
             </div>
         </div>
-		</div>
-	 </div>
-	 </div>
-</body>
+        <!-- End Work -->
+            
+        <!-- Contact -->
+        <div id="contact">
+            <div class="bg-color-sky-light">
+                <div class="container content-lg">
+                    <div class="row">
+                        <div class="col-sm-3 sm-margin-b-30">
+                            <div class="text-right sm-text-left">
+                                <h2 class="margin-b-0">Contacts</h2>
+                                <p>Hit me up.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <div class="row">
+                                <!--<div class="col-md-3 col-xs-6 md-margin-b-30">
+                                    <h5>Location</h5>
+                                    <a href="http://keenthemes.com/">Brookyln, New York</a>
+                                </div>-->
+                                <div class="col-md-3 col-xs-6 md-margin-b-30">
+                                    <h5>Phone</h5>
+                                    <a href="http://keenthemes.com/">+91 83 74 719643</a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <h5>Email</h5>
+                                    <a href="mailto:#">ramu199611@gmail.com</a>
+                                </div>
+                                <!--<div class="col-md-3 col-xs-6">
+                                    <h5>Web</h5>
+                                    <a href="http://keenthemes.com/">alex.teseira.com</a>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--// end row -->
+                </div>
+            </div>
+        </div>
+        <!-- End Contact -->
+        <!--========== END PAGE LAYOUT ==========-->
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer">
+            <div class="content container">
+                <div class="row">
+                    <!--<div class="col-xs-6">
+                        <img class="footer-logo" src="img/logo-dark.png" alt="Aircv Logo">
+                    </div>
+                    <div class="col-xs-6 text-right sm-text-left">
+                        <p class="margin-b-0"><a class="fweight-700" href="http://keenthemes.com/preview/aircv/">Aircv</a> Theme Powered by: <a class="fweight-700" href="http://www.keenthemes.com/">KeenThemes.com</a></p>
+                    </div>-->
+                </div>
+                <!--// end row -->
+            </div>
+        </footer>
+        <!--========== END FOOTER ==========-->
+
+        <!-- Back To Top -->
+        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+        <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- CORE PLUGINS -->
+        <script src="vendor/jquery.min.js" type="text/javascript"></script>
+        <script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL PLUGINS -->
+        <script src="vendor/jquery.easing.js" type="text/javascript"></script>
+        <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
+        <script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+        <script src="vendor/jquery.wow.min.js" type="text/javascript"></script>
+        <script src="vendor/jquery.parallax.min.js" type="text/javascript"></script>
+        <script src="vendor/jquery.appear.js" type="text/javascript"></script>
+        <script src="vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+        <script src="vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL SCRIPTS -->
+        <script src="js/layout.min.js" type="text/javascript"></script>
+        <script src="js/components/progress-bar.min.js" type="text/javascript"></script>
+        <script src="js/components/masonry.min.js" type="text/javascript"></script>
+        <script src="js/components/wow.min.js" type="text/javascript"></script>
+
+    </body>
+    <!-- END BODY -->
 </html>
