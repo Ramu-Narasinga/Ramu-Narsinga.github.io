@@ -372,7 +372,7 @@ render() {
                 </div>
 
                 <div className="simple-plan-container">
-                    <div className="container ">
+                    <div className="container" style={{maxWidth: '50%'}}>
                         <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()} 
                             className="plan-tier"/>
                     </div>
