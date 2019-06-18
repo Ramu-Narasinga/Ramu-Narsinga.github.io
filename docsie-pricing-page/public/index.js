@@ -54,7 +54,7 @@
         console.log("found tier is", tier);
 
           rows.push(
-              <Col sm="3" key={tier.name} className="simple-plan-tier-col">
+            <div key={tier.name} className="col-xs-12 col-sm col-md col-lg">
                   <div className="price-card">
                       <div className="pricing-panel-wrapper">
                           <div className="pricing-panel">
@@ -87,17 +87,15 @@
                           </div>
                       </div>
                   </div>
-              </Col>
+              </div>
           );
 
       });
 
       return (
-        <Container>
-          <Row>
-              {rows}
-          </Row>
-        </Container>
+        <div className="row">
+            {rows}
+        </div>
       );
 }
 };
@@ -354,37 +352,19 @@ render() {
   })
   
   return (
-      <div className="simple-detail-plan-tier-sm-md-lg">
+      <div className="container simple-detail-plan-tier-sm-md-lg">
           {!this.state.showDetailedPlanOveriew
               ?
               <div>
                   
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
-                        One of three columns
-                        </div>
-                        <div class="col-sm">
-                        One of three columns
-                        </div>
-                        <div class="col-sm">
-                        One of three columns
-                        </div>
-                    </div>
+                <div className="accrd-view">
+                    <PlansAccordion plans={this.state.plans} className="accordion-plan-tier"/>
                 </div>
 
-                  <MediaQuery query="(max-device-width: 1023px)">
-                    <div className="accrd-view">
-                        <PlansAccordion plans={this.state.plans} className="accordion-plan-tier"/>
-                    </div>
-                  </MediaQuery>
-                  
-                  <MediaQuery query="(min-device-width: 1024px)">
-                    <div className="simple-plan-container">
-                        <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()} 
-                            className="plan-tier"/>
-                    </div>
-                </MediaQuery>
+                <div className="simple-plan-container">
+                    <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()} 
+                        className="plan-tier"/>
+                </div>
               </div>
               :
               <div>

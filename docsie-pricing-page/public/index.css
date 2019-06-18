@@ -413,3 +413,39 @@ p.compare-plans:hover {
   transform: rotate(45deg);
   margin-bottom: 8px !important;
 }
+
+/* for desktop viewport layout */
+@media (min-width: 768px) {
+  
+  .demo {
+    display: none !important;
+  }
+
+  /* hide mobile viewport layout */
+  .accrd-view {
+    display: none !important;
+  }
+
+  /* show desktop viewport layout */
+  .simple-plan-container {
+    display: block !important;
+  }
+}
+
+/* for smaller viewport layput */
+@media (max-width: 767px) {
+  
+  /* show smaller viewport layout */
+  .demo {
+    display: block !important;
+  }
+
+  .accrd-view {
+    display: block !important;
+  }
+
+  /* hide desktop viewport layout */
+  .simple-plan-container {
+    display: none !important;
+  }
+}
