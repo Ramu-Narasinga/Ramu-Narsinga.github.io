@@ -2,6 +2,8 @@
   border: 1px solid #e5e5e5;
   /* background-color: white; */
   background: inherit !important;
+  text-align: center; 
+  margin: auto;
 }
 
 .category-feature-xs {
@@ -11,6 +13,9 @@
 
 .pricing-name {
   font-weight: 700!important;
+  text-align: center; 
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 /* .detailed-plan-view {
@@ -19,7 +24,7 @@
 } */
 
 .price-card {
-  display: flex;
+  /* display: flex; */
   width: 100%;
 }
 
@@ -44,8 +49,9 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 25rem;
+  height: 30rem;
   padding: 20px;
+  text-align: center;
 }
 
 .pricing-panel .pricing-panel-footer {
@@ -61,15 +67,18 @@
   font-weight: 400;
   margin: 0 0 10px;
   letter-spacing: .2em;
+  text-align: center;
 }
 
 .product-price.product-price-lg {
-  font-size: 80px;
-  height: 7rem;
+  font-size: 35px;
+  height: 4rem;
 }
 
 .product-price.product-price-lg .currency {
-  bottom: 1.7em;
+  /* bottom: 1.7em;
+  font-size: 1.6rem; */
+  bottom: 0.7em;
   font-size: 1.6rem;
 }
 
@@ -79,9 +88,12 @@
 }
 
 .product-price.product-price-lg .period {
-  bottom: .4em;
+  /* bottom: .4em;
   color: inherit;
-  font-size: 1.2rem;
+  font-size: 1.2rem; */
+  bottom: 0.2em;
+  color: inherit;
+  font-size: 1.0rem;
 }
 
 .pricing-panel .pricing-panel-info {
@@ -112,7 +124,7 @@
 }
 .action-link {
   color: white !important;
-  font-size: 34px !important;
+  font-size: 16px !important;
 }
 
 .action-link-lg {
@@ -124,7 +136,7 @@ a.action-link:hover {
   color: white !important;
 }
 
-a.compare-plans:hover {
+p.compare-plans:hover {
   color: #b50000bf !important;
 }
 
@@ -177,6 +189,7 @@ p.compare-plans:hover {
 .product-price.product-price-md {
   font-size: 2.5rem;
   height: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .product-price.product-price-md .currency {
@@ -192,7 +205,14 @@ p.compare-plans:hover {
 }
 
 .category-type-1 {
+  position: relative;
+  left: 10%;
   margin-top: 1.5rem!important;
+}
+
+.category-type-main {
+  text-align: center;
+  margin-top: 3.5rem!important;
 }
 
 /* start of mobile css */
@@ -218,7 +238,7 @@ p.compare-plans:hover {
 }
 
 .product-price.product-price-sm {
-  font-size: 40px !important;
+  font-size: 19px !important;
 }
 
 .product-price.product-price-sm .currency {
@@ -231,17 +251,18 @@ p.compare-plans:hover {
   float: right;
   position: relative;
   bottom: 0px;
+  top: 2px;
 }
 
 .product-price.product-price-sm .period {
   top: auto;
-  bottom: .1em;
+  bottom: 0.1em;
   /* font-size: .5em; */
-  font-size: 32px !important;
+  font-size: 12px !important;
 }
 
-.text-light-gray {
-  color: #99A2A3!important;
+.text-yearly-color {
+  color: black !important;
 }
 
 .plan-desc-feature {
@@ -273,6 +294,7 @@ p.compare-plans:hover {
 
 .row {
   margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 /* accordion changes */
@@ -318,7 +340,7 @@ p.compare-plans:hover {
 .accrd-view {
   position: relative;
   margin-top: 10%;
-  font-size: 34px !important;
+  font-size: 16px !important;
 }
 
 @media (min-width: 544px) {
@@ -327,40 +349,6 @@ p.compare-plans:hover {
       width: 19.666667% !important;
   }
 }
-
-/* .tooltip-info {
-  position: relative;
-  display: inline-block;
-  /* border-bottom: 1px dotted black;
-}
-
-.tooltip-info .tooltiptext-info {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  top: -10px;
-  left: 110%;
-}
-
-.tooltip-info .tooltiptext-info::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent black transparent transparent;
-}
-.tooltip-info:hover .tooltiptext-info {
-  visibility: visible;
-} */
 
 .tooltip-info {
   position: relative;
@@ -380,7 +368,7 @@ p.compare-plans:hover {
   z-index: 1;
   bottom: 102%;
   left: 50%;
-  margin-left: -85px;
+  margin-left: -51px;
 }
 
 .tooltip-info .tooltiptext-info::after {
@@ -398,11 +386,48 @@ p.compare-plans:hover {
   visibility: visible;
 }
 
+.tooltip-info-dsk {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip-info-dsk .tooltiptext-info-dsk {
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 102%;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.tooltip-info-dsk .tooltiptext-info-dsk::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip-info-dsk:hover .tooltiptext-info-dsk {
+  visibility: visible;
+}
+
+
 .accordion__button:before {
   display: inline-block;
   content: '';
-  height: 20px !important;
-  width: 20px !important;
+  height: 13px !important;
+  width: 13px !important;
   margin-right: 20px !important;
   border-bottom: 2px solid currentColor;
   border-right: 2px solid currentColor;
@@ -411,7 +436,7 @@ p.compare-plans:hover {
 
 .accordion__button[aria-expanded='true']::before, .accordion__button[aria-selected='true']::before {
   transform: rotate(45deg);
-  margin-bottom: 8px !important;
+  margin-bottom: 3px !important;
 }
 
 /* for desktop viewport layout */
@@ -428,7 +453,7 @@ p.compare-plans:hover {
 
   /* show desktop viewport layout */
   .simple-plan-container {
-    display: block !important;
+    display: block;
   }
 }
 
@@ -447,5 +472,30 @@ p.compare-plans:hover {
   /* hide desktop viewport layout */
   .simple-plan-container {
     display: none !important;
+  }
+
+  .detail-plan-container {
+    display: none !important;
+  }
+}
+
+/* for medium sized tablets */
+@media (min-width: 768px)and (max-width: 991px) {
+
+  .action-link-lg {
+    color: white !important;
+    font-size: 13px !important;
+  }
+
+  .pricing-panel .pricing-panel-footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    left: 0;
+    right: 0 !important;
+  }
+
+  .pricing-panel-tier {
+    font-size: 13px;
   }
 }

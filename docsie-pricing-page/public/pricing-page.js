@@ -18,26 +18,6 @@
 
     const ReactTooltip = ReactTooltip;
 
-    class LikeButton extends React.Component {
-
-      render() {
-        // if (this.state.liked) {
-        //   return 'You liked this.';
-        // }
-
-        return (
-          // <button onClick={() => this.setState({ liked: true }) }>
-          //   Like Button
-          // </button>
-          <div>
-            <Button>
-              duh
-            </Button>
-          </div>
-        );
-      }
-    }
-
     class SimplePlanTier extends React.Component {
 
 
@@ -47,14 +27,14 @@
 
       const rows = [];
 
-      console.log("props in simple pkan tier", this.props);
+      console.log("props in simple plan tier", this.props);
 
       this.props.tiers.forEach((tier) => {
 
         console.log("found tier is", tier);
 
           rows.push(
-            <div key={tier.name} className="col-xs-12 col-sm col-md col-lg">
+            <div key={tier.name} className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div className="price-card">
                       <div className="pricing-panel-wrapper">
                           <div className="pricing-panel">
@@ -66,7 +46,7 @@
                                       <span className="period">/mo</span>
                                   </h2>
                                   <div className="pricing-panel-info">
-                                      <div className="text-light-gray">
+                                      <div className="text-yearly-color">
                                           <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
                                               {tier.pricing.yearly.currency}{tier.pricing.yearly.price}/mo when you <a href="#" className="yearly"> pay yearly</a>
                                           </p>
@@ -294,15 +274,15 @@ render() {
   this.state.tiers.forEach((tier) => {
 
       detailRows.push(
-          <Col sm="2" key={tier.name} style={{ textAlign: 'center' }}>
-
+        //   <Col sm="2" key={tier.name} style={{ textAlign: 'center' }}>
+            <div key={tier.name} className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <h4 className="pricing-name">{tier.name}</h4>
               <h2 className="product-price product-price-md">
                   <span className="currency">{tier.pricing.monthly.currency}</span>
                   <span className="price">{tier.pricing.monthly.price}</span>
                   <span className="period">/mo</span>
               </h2>
-          </Col>
+          </div>
       )
   });
 
@@ -317,42 +297,72 @@ render() {
       category.features.forEach((item, j) => {
 
               categoryFeatures.push(
-                  <Container key={item.name}>
+                //   <Container key={item.name}>
 
-                      { i!= 0 && j == 0 ?
-                      <h4 className="category-type-1">{category.name}</h4>
-                       : ''}
+                //       { i!= 0 && j == 0 ?
+                //       <h4 className="category-type-1">{category.name}</h4>
+                //        : ''}
                       
-                      <Row style={{ textAlign: 'center', textAlign: 'center', margin: 'auto' }}>
-                          <Col sm="2" className="category-feature">
+                //       <Row style={{ textAlign: 'center', textAlign: 'center', margin: 'auto' }}>
+                //           <Col sm="2" className="category-feature">
 
-                              <div style={{display: 'inline-block'}}>{item.name}&nbsp;
-                                  <span className="tooltip-info"><i className="fa fa-info-circle" aria-hidden="true" data-tip={item.info}></i>
-                                      <span className="tooltiptext-info">{item.info}</span>
-                                  </span>
-                              </div>
+                //               <div style={{display: 'inline-block'}}>{item.name}&nbsp;
+                //                   <span className="tooltip-info"><i className="fa fa-info-circle" aria-hidden="true" data-tip={item.info}></i>
+                //                       <span className="tooltiptext-info">{item.info}</span>
+                //                   </span>
+                //               </div>
                               
-                          </Col>
-                          <Col sm="2" className="category-feature">
-                              <div>{item.values.Standard}</div>
-                          </Col>
-                          <Col sm="2" className="category-feature">
-                              <div>{item.values.Medium}</div>
-                          </Col>
-                          <Col sm="2" className="category-feature">
-                              <div>{item.values.Large}</div>
-                          </Col>
-                          <Col sm="2" className="category-feature">
-                              <div>{item.values.Premium}</div>
-                          </Col>
-                      </Row>
-                  </Container>
+                //           </Col>
+                //           <Col sm="2" className="category-feature">
+                //               <div>{item.values.Standard}</div>
+                //           </Col>
+                //           <Col sm="2" className="category-feature">
+                //               <div>{item.values.Medium}</div>
+                //           </Col>
+                //           <Col sm="2" className="category-feature">
+                //               <div>{item.values.Large}</div>
+                //           </Col>
+                //           <Col sm="2" className="category-feature">
+                //               <div>{item.values.Premium}</div>
+                //           </Col>
+                //       </Row>
+                //   </Container>
+                <div key={item.name}>
+
+                    { i!= 0 && j == 0 ?
+                        <div className="row">
+                    
+                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+
+                                <h4 style={{ textAlign: 'center'}}>{category.name}</h4>
+                            </div>
+                        </div>
+                    : ''}
+                    
+                    <div className="row">
+                    
+                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 category-feature" style={{ textAlign: 'center', margin: 'auto' }}>
+
+                            <div style={{display: 'inline-block'}}>{item.name}&nbsp;
+                                <span className="tooltip-info-dsk"><i className="fa fa-info-circle" aria-hidden="true" data-tip={item.info}></i>
+                                    <span className="tooltiptext-info-dsk">{item.info}</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 category-feature">
+                            <div>{item.values.Standard}</div>
+                        </div>
+                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 category-feature">
+                            <div>{item.values.Medium}</div>
+                        </div>
+                    </div>
+                </div>
               )
       })
   })
-  
+
   return (
-      <div className="container simple-detail-plan-tier-sm-md-lg">
+      <div className="simple-detail-plan-tier-sm-md-lg">
           {!this.state.showDetailedPlanOveriew
               ?
               <div>
@@ -362,42 +372,39 @@ render() {
                 </div>
 
                 <div className="simple-plan-container">
-                    <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()} 
-                        className="plan-tier"/>
+                    <div className="container ">
+                        <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()} 
+                            className="plan-tier"/>
+                    </div>
                 </div>
               </div>
               :
               <div>
-                <MediaQuery query="(max-device-width: 1023px)">
-                  <div className="accrd-view">
+
+                <div className="accrd-view">
                     <PlansAccordion plans={this.state.plans} className="accordion-plan-tier"/>
-                  </div>
-                </MediaQuery>
-                <MediaQuery query="(min-device-width: 1024px)">
-                  
-                  <div className="detail-plan-container">
-                      <Container style={{background: '#f5505017'}}>
-                          
-                              <Row>
+                </div>
+                <div className="detail-plan-container">
+                    <div className="container" style={{background: '#f5505017'}}>
+                            
+                                <div className="row">
 
-                                  <Col sm="2">
+                                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 
-                                      <h4 className="category-type-1">{this.state.categories[0].name}</h4>
-                                  </Col>
+                                        <h4 className="category-type-main">{this.state.categories[0].name}</h4>
+                                    </div>
 
-                                  {detailRows}
-                              </Row>
+                                    {detailRows}
+                                </div>
 
-                              {categoryFeatures}
+                                {categoryFeatures}
 
-                              <br />
-
-                              <Button className="sign-up-btn view-simple-tier-btn" onClick={() => this.handleClick()}>
-                                <div className="action-link-lg view-simple-tier">View Simple Plan Tier</div>
-                              </Button>
-                      </Container>
-                  </div>
-                </MediaQuery>
+                                <br />
+                                <Button className="sign-up-btn view-simple-tier-btn" onClick={() => this.handleClick()}>
+                                    <div className="action-link-lg view-simple-tier">View Simple Plan Tier</div>
+                                </Button>
+                    </div>
+                </div>
               </div>
           }
       </div>
