@@ -32,43 +32,43 @@ data = {
         "call_to_action" : {"text":"Try it Free!",
                             "url": "try-it-free-url"}
       },
-    {
-      "pricing": {
-         "monthly": {        "price": "1.00",
-        "currency": "$"},
-         "yearly" : {        "price": "1.00",
-        "currency": "$"}
-       },
-        "currency": "",
-        "comment" : "",
-        "name": "Growth",
-        "icon" : "www.docsie.io/icon.png",
-        "order": 3,
-        "description": "Professional Product Documentation Tools for a Growing Businesses",
-        "features": [
+    // {
+    //   "pricing": {
+    //      "monthly": {        "price": "1.00",
+    //     "currency": "$"},
+    //      "yearly" : {        "price": "1.00",
+    //     "currency": "$"}
+    //    },
+    //     "currency": "",
+    //     "comment" : "",
+    //     "name": "Growth",
+    //     "icon" : "www.docsie.io/icon.png",
+    //     "order": 3,
+    //     "description": "Professional Product Documentation Tools for a Growing Businesses",
+    //     "features": [
 
-        ],
-        "call_to_action" : {"text":"Contact Us",
-          "url": "contact-us-url"}
-      },
-    {
-      "pricing": {
-         "monthly": {        "price": "5.00",
-        "currency": "$"},
-         "yearly" : {        "price": "4.00",
-        "currency": "$"}
-       },
-        "currency": "",
-        "comment" : "starting from",
-        "name": "Entreprise",
-        "icon" : "www.docsie.io/icon.png",
-        "order": 4,
-        "description": "Accelerate your Enterprise Product Documentation with Docsie",
-        "features": [
+    //     ],
+    //     "call_to_action" : {"text":"Contact Us",
+    //       "url": "contact-us-url"}
+    //   },
+    // {
+    //   "pricing": {
+    //      "monthly": {        "price": "5.00",
+    //     "currency": "$"},
+    //      "yearly" : {        "price": "4.00",
+    //     "currency": "$"}
+    //    },
+    //     "currency": "",
+    //     "comment" : "starting from",
+    //     "name": "Entreprise",
+    //     "icon" : "www.docsie.io/icon.png",
+    //     "order": 4,
+    //     "description": "Accelerate your Enterprise Product Documentation with Docsie",
+    //     "features": [
 
-        ],
-        "call_to_action" : {"text":"Contact Us",
-          "url": "contact-us-url"}
-      }
+    //     ],
+    //     "call_to_action" : {"text":"Contact Us",
+    //       "url": "contact-us-url"}
+    //   }
   ]
 }
