@@ -359,6 +359,20 @@ render() {
               ?
               <div>
                   
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                        One of three columns
+                        </div>
+                        <div class="col-sm">
+                        One of three columns
+                        </div>
+                        <div class="col-sm">
+                        One of three columns
+                        </div>
+                    </div>
+                </div>
+
                   <MediaQuery query="(max-device-width: 1023px)">
                     <div className="accrd-view">
                         <PlansAccordion plans={this.state.plans} className="accordion-plan-tier"/>
