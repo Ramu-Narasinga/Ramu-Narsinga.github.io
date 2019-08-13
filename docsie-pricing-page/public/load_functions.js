@@ -100,6 +100,9 @@ function setCookie(cname, cvalue) {
     // var expires = "expires="+d.toUTCString();
     var expires = "expires=" + "Fri, 31 Dec 9999 23:59:59 GMT"
     document.cookie = cname + "=" + cvalue + ";" + expires;
+
+    // hide banner upon accepting cookies agreement
+    document.getElementById("cookies-use-agreement").style.display = 'none';
 }
 
 // get
