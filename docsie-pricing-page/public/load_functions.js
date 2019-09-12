@@ -105,7 +105,7 @@ function setCookie(cname, cvalue) {
     document.getElementById("cookies-use-agreement").style.display = 'none';
 }
 
-// get
+// get cookie for a given name
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
