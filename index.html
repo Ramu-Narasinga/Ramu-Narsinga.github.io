@@ -547,7 +547,13 @@
         <script>window.LogRocket && window.LogRocket.init('uibppf/demo');</script>
         <script>
             function onLoad() {
-
+                LogRocket.identify('123456', {
+                    name: 'Jane Smith',
+                    email: 'jonesmith@logrocket.com',
+                    age: 43,
+                    favoriteColor: 'blue',
+                    currentSubscription: 'professional-plan',
+                });
             }
         </script>
     </body>
